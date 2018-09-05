@@ -1,0 +1,20 @@
+<aura:component >
+    <!-- Address to send Google to get more information -->
+    <aura:attribute name="address" type="String" access="global" default="Rue Amar Ali, Casbah, Algérie" />
+
+    <!-- Google API key to send if needed; OPTIONAL -->
+    <aura:attribute name="apikey" type="String" access="global" />
+
+    <!-- Add utils component to use aura:method -->
+    <c:Component aura:id="component" />
+
+    <div class="slds">
+        <!-- User input to ask for address and API key if needed -->
+        <lightning:input type="text" label="Address" name="{!v.address}" value="{!v.address}" />
+        <lightning:input type="text" label="API Key" name="{!v.apikey}" value="{!v.apikey}"/>
+
+        <!-- Send request to Google on button click -->
+        <lightning:button label="Call Ajax" onclick="{!c.buttonPress}" />
+
+    </div>
+</aura:component>
